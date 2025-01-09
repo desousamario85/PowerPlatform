@@ -7,7 +7,7 @@ env:
   SolutionName: ${{ vars.SolutionName }}
 
 jobs:
-  pipeline:
+  Power-Platform-Deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,6 +40,9 @@ jobs:
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
         tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
 
+  Logic-App-Deploy:
+   runs-on: ubuntu-latest
+   steps:
     # Update Values in ARM Template using PowerShell
     - name: Update Values in ARM Template
       uses: azure/powershell@v1
