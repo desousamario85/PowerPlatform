@@ -19,15 +19,6 @@ jobs:
     - name: Install Power Platform Tools
       uses: microsoft/powerplatform-actions/actions-install@v1
 
-    # Authenticate with Power Platform using service principal
-    - name: Authenticate with Power Platform
-      uses: microsoft/powerplatform-actions/authenticate-environment@v1
-      with:
-        app-id: ${{ secrets.POWERPLATFORM_APP_ID }}
-        client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
-        tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
-        environment-url: ${{ secrets.POWERPLATFORM_ENV_URL }}
-
     # Pack Power Platform Solution
     - name: Power Platform Pack Solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
@@ -45,6 +36,10 @@ jobs:
         ConvertToManaged: true
         PublishCustomizationChanges: true
         PublishWorkflows: true
+        environment-url: ${{secrets.POWERPLATFORM_ENV_URL}}
+        app-id: ${{secrets.POWERPLATFORM_APP_ID}}
+        client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
+        tenant-id: ${{env.TENANT_ID}}
 
     # Update Values in ARM Template using PowerShell
     - name: Update Values in ARM Template
