@@ -24,14 +24,14 @@ jobs:
       uses: microsoft/powerplatform-actions/pack-solution@v1
       with:
         solution-folder: ${{ github.workspace }}/PowerPlatform/AliceforAccounts
-        solution-file: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
+        solution-file: ${{ github.workspace }}/PowerPlatform/$SolutionName_Managed.zip
         solution-type: Managed
 
     # Import Power Platform Solution
     - name: Power Platform Import Solution
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
-        solution-file: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
+        solution-file: ${{ github.workspace }}/PowerPlatform/$SolutionName_Managed.zip
         run-asynchronously: true
         force-overwrite: true
         publish-changes: true
