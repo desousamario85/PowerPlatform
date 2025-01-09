@@ -50,7 +50,7 @@ jobs:
         azPSVersion: 'latest'
         scriptPath: ./CICD/replace_dataset.ps1
         arguments: |
-           -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/data_set_TEST.json"
+           -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/CICD/data_set_TEST.json"
 
     # Deploy ARM Template
     - name: ARM Template Deployment
