@@ -23,19 +23,18 @@ jobs:
     - name: Power Platform Pack Solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
       with:
-        SolutionSourceFolder: ${{ github.workspace }}/PowerPlatform/AliceforAccounts
-        SolutionOutputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
-        SolutionType: Managed
+        solution-folder: ${{ github.workspace }}/PowerPlatform/AliceforAccounts
+        solution-file: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
+        solution-type: Managed
 
     # Import Power Platform Solution
     - name: Power Platform Import Solution
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
-        SolutionInputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
-        OverwriteUnmanagedCustomizations: true
-        ConvertToManaged: true
-        PublishCustomizationChanges: true
-        PublishWorkflows: true
+        solution-file: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
+        run-asynchronously: true
+        force-overwrite: true
+        publish-changes: true
         environment-url: ${{secrets.POWERPLATFORM_ENV_URL}}
         app-id: ${{secrets.POWERPLATFORM_APP_ID}}
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
