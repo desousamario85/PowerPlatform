@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sales xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <useinbuiltrulefordefaultpricelistselection>True</useinbuiltrulefordefaultpricelistselection>
+  <maxproductsinbundle>15</maxproductsinbundle>
+  <oobpricecalculationenabled>True</oobpricecalculationenabled>
+  <discountcalculationmethod>0</discountcalculationmethod>
+  <maximumdynamicpropertiesallowed>50</maximumdynamicpropertiesallowed>
+  <createproductswithoutparentinactivestate>False</createproductswithoutparentinactivestate>
+</sales>

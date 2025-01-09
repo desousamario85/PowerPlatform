@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{1f6319e6-ecda-4c93-9c62-bc10f063b4b0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="eire_name" select="1" icon="1" preview="1">
+        <row name="result" id="eire_invoiceid">
+          <cell name="eire_invoicenumber" width="132" />
+          <cell name="eire_vendorname" width="118" />
+          <cell name="eire_companyname" width="132" />
+          <cell name="eire_invoiceemailreceiveddatetime" width="234" />
+          <cell name="statuscode" width="119" />
+          <cell name="eire_totalamount" width="118" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="eire_invoice">
+          <attribute name="eire_invoiceid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="eire_invoicenumber" />
+          <attribute name="eire_vendorname" />
+          <attribute name="eire_companyname" />
+          <attribute name="statuscode" />
+          <attribute name="eire_totalamount" />
+          <attribute name="eire_invoiceemailreceiveddatetime" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Invoices" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

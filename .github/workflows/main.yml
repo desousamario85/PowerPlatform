@@ -32,15 +32,15 @@ jobs:
     - name: Power Platform Pack Solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
       with:
-        SolutionSourceFolder: ${{ github.workspace }}/_Eir Evo - Alice for Accounts/AliceforAccounts/AliceforAccounts
-        SolutionOutputFile: ${{ github.workspace }}/Repo - Alice/${{ env.SolutionName }}_Managed.zip
+        SolutionSourceFolder: ${{ github.workspace }}/PowerPlatform/AliceforAccounts
+        SolutionOutputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
         SolutionType: Managed
 
     # Import Power Platform Solution
     - name: Power Platform Import Solution
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
-        SolutionInputFile: ${{ github.workspace }}/Repo - Alice/${{ env.SolutionName }}_Managed.zip
+        SolutionInputFile: ${{ github.workspace }}/Dataverse/${{ env.SolutionName }}_Managed.zip
         OverwriteUnmanagedCustomizations: true
         ConvertToManaged: true
         PublishCustomizationChanges: true
@@ -51,7 +51,7 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |
-          ./Repo/CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/repo/LogicApps" -input_dataset "${{ github.workspace }}/Repo/CICD/data_set_TEST.json"
+          ./CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/data_set_TEST.json"
 
     # Deploy ARM Template
     - name: ARM Template Deployment
@@ -60,6 +60,6 @@ jobs:
         deploymentScope: resourceGroup
         resourceGroupName: rg-ne-alice-test
         location: North Europe
-        template: ${{ github.workspace }}/Repo/LogicApps/template.json
-        parameters: ${{ github.workspace }}/Repo/LogicApps/parameters.json
+        template: ${{ github.workspace }}/LogicApps/template.json
+        parameters: ${{ github.workspace }}/LogicApps/parameters.json
         azureResourceManagerConnection: ${{ secrets.AZURE_RM_CONNECTION }}

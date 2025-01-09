@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_eire_errorlog" />
+  <EntityRelationship Name="business_unit_eire_invoice" />
+  <EntityRelationship Name="business_unit_eire_invoicelineitem" />
+  <EntityRelationship Name="eire_errorlog_InvoiceID_eire_invoice" />
+  <EntityRelationship Name="eire_invoicelineitem_InvoiceID_eire_invoice" />
+  <EntityRelationship Name="lk_eire_errorlog_createdby" />
+  <EntityRelationship Name="lk_eire_errorlog_modifiedby" />
+  <EntityRelationship Name="lk_eire_invoice_createdby" />
+  <EntityRelationship Name="lk_eire_invoice_modifiedby" />
+  <EntityRelationship Name="lk_eire_invoicelineitem_createdby" />
+  <EntityRelationship Name="lk_eire_invoicelineitem_modifiedby" />
+  <EntityRelationship Name="owner_eire_errorlog" />
+  <EntityRelationship Name="owner_eire_invoice" />
+  <EntityRelationship Name="owner_eire_invoicelineitem" />
+  <EntityRelationship Name="team_eire_errorlog" />
+  <EntityRelationship Name="team_eire_invoice" />
+  <EntityRelationship Name="team_eire_invoicelineitem" />
+  <EntityRelationship Name="TransactionCurrency_eire_Invoice" />
+  <EntityRelationship Name="TransactionCurrency_eire_InvoiceLineItem" />
+  <EntityRelationship Name="user_eire_errorlog" />
+  <EntityRelationship Name="user_eire_invoice" />
+  <EntityRelationship Name="user_eire_invoicelineitem" />
+</EntityRelationships>
