@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_InvoiceProcessing_name": {
+            "value": null
+        },
+        "connections_office365_externalid": {
+            "value": null
+        },
+        "customApis_powerpulse_externalid": {
+            "value": null
+        },
+        "connections_powerpulse_externalid": {
+            "value": null
+        },
+        "connections_commondataservice_externalid": {
+            "value": null
+        },
+        "connections_formrecognizer_externalid": {
+            "value": null
+        },
+        "connections_encodiandocumentmanager_externalid": {
+            "value": null
+        },
+        "connections_sharepointonline_externalid": {
+            "value": null
+        },
+        "customApis_lnbits_externalid": {
+            "value": null
+        },
+        "connections_lnbits_externalid": {
+            "value": null
+        }
+    }
+}

@@ -1,0 +1,91 @@
+[
+    { 
+    "data_sources":[
+        {
+"Name": "Dataverse URL",
+"id_from": "https://alicedev.crm4.dynamics.com",
+"id_to": "https://org312a731f.crm4.dynamics.com"
+},
+
+        {
+"Name": "Modern Drive App ID",
+"id_from": "3a9bc01e-f386-ef11-ac20-000d3a679024",
+"id_to": "0deb39d3-0487-ef11-ac21-000d3ab8684b"
+},
+{
+"Name": "Accounts Mailbox email Address",
+"id_from": "accounts@EvoLabs.ie",
+"id_to": "AliceTestAccounts@EvoLabs.ie"
+
+},
+{
+"Name": "Accounts Mailbox Object ID",
+"id_from": "13811160-c2b2-4158-9041-0892776bed36",
+"id_to": "41bec4de-7492-4a64-9054-092fb30e5d7d"
+
+},
+{
+"Name": "Processed Mail Folder",
+"id_from": "Id::AAMkAGIyNDlkZGI5LTBmMjctNDYwMi05NjcwLWIxYmVjZTllODliOQAuAAAAAABORfst7MeLT4n9yVnwSQO0AQCOj5-6RTM5TJmUex6dIr2-AAADyc6GAAA=",
+"id_to": "Id::AQMkADRkMGIzMWFlLWFmOTUtNGEyMy04NjA5LTQzZDgzZWQ0YzJlZQAALgAAA0dptX4SK89EiGWe+OksBlABAHwFxnR6Py1HiUnqlfXERGAAAAIBYQAAAA=="
+
+},
+{
+"Name": "Partially Processed Mail Folder",
+"id_from": "Id::AAMkAGIyNDlkZGI5LTBmMjctNDYwMi05NjcwLWIxYmVjZTllODliOQAuAAAAAABORfst7MeLT4n9yVnwSQO0AQCOj5-6RTM5TJmUex6dIr2-AAADyc6JAAA=",
+"id_to": "Id::AQMkADRkMGIzMWFlLWFmOTUtNGEyMy04NjA5LTQzZDgzZWQ0YzJlZQAALgAAA0dptX4SK89EiGWe+OksBlABAHwFxnR6Py1HiUnqlfXERGAAAAIBYAAAAA=="
+
+},
+{
+"Name": "Rejected Mail Folder",
+"id_from": "Id::AAMkAGIyNDlkZGI5LTBmMjctNDYwMi05NjcwLWIxYmVjZTllODliOQAuAAAAAABORfst7MeLT4n9yVnwSQO0AQCOj5-6RTM5TJmUex6dIr2-AAADyc6IAAA=",
+"id_to": "Id::AQMkADRkMGIzMWFlLWFmOTUtNGEyMy04NjA5LTQzZDgzZWQ0YzJlZQAALgAAA0dptX4SK89EiGWe+OksBlABAHwFxnR6Py1HiUnqlfXERGAAAAIBYgAAAA=="
+
+},
+{
+"Name": "Failed Mail Folder",
+"id_from": "Id::AAMkAGIyNDlkZGI5LTBmMjctNDYwMi05NjcwLWIxYmVjZTllODliOQAuAAAAAABORfst7MeLT4n9yVnwSQO0AQCOj5-6RTM5TJmUex6dIr2-AAADyc6HAAA=",
+"id_to": "Id::AQMkADRkMGIzMWFlLWFmOTUtNGEyMy04NjA5LTQzZDgzZWQ0YzJlZQAALgAAA0dptX4SK89EiGWe+OksBlABAHwFxnR6Py1HiUnqlfXERGAAAAIBXwAAAA=="
+
+},{"Name": "Channel ID",
+"id_from": "19:hrOjgOR_jx2lvU2BNwIUU55RsBL7JBZOuqnn05Y76qw1@thread.tacv2",
+"id_to": "19:y_m1NFMq6c4Gr-slDZ2uaD_5SJp8XGgEGKAwlSepFOw1@thread.tacv2"
+},
+
+{"Name": "Azure Function URL",
+"id_from": "https://alice-dev-functions.azurewebsites.net/api/Invoice_Notification?code=QCErdpfjwkxMpWJ9Px_trQQ5zgHJ3Hh8i3uFphBUbHBuAzFui8A4ug%3D%3D",
+"id_to": "https://alice-test-function.azurewebsites.net/api/Invoice_Notification?code=HFndCCRgBkDYwXh29LLZ7GEXhrjAAeRyhS8YC0u-MxNPAzFu9EHKhw%3D%3D"
+},
+{"Name": "SharePoint URL",
+"id_from": "https://evrosdemo.sharepoint.com/teams/AliceDev",
+"id_to": "https://evrosdemo.sharepoint.com/teams/AliceTest"
+},
+{"Name": "Document Library ID",
+"id_from": "168f4f4d-4f3d-41e1-8af8-e43e94cfc20d",
+"id_to": "168f4f4d-4f3d-41e1-8af8-e43e94cfc2"
+}
+,
+{"Name": "Sender UserID",
+"id_from": "276a39c5783a4fd5a67a11a62155b7f0",
+"id_to": "276a39c5783a4fd5a67a11a62155b7f0"
+},
+{"Name": "Receiver User ID",
+"id_from": "bdbe41518122490ab01d6802f4eaf1b9",
+"id_to": "c9248f4ac959467aa47fe9da69aa0b27"
+}
+,
+{"Name": "LNBits URL",
+"id_from": "https://finickyoil0.lnbits.com",
+"id_to": "https://needycoati4.lnbits.com"
+},
+{"Name": "LNBits AdminKey",
+"id_from": "1d5658a73ecf426d9039b6c5f30a3de5",
+"id_to": "07fd3761f03d4ab1947d02056ac616a6"
+},
+{"Name": "LNBits custom connector",
+"id_from": "rg-ne-alice-dev/providers/Microsoft.Web/connections/lnbits",
+"id_to": "rg-ne-alice-test/providers/Microsoft.Web/connections/lnbits"
+}
+                ]
+    }
+]
