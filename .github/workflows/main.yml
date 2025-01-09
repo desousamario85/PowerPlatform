@@ -21,7 +21,7 @@ jobs:
 
     # Authenticate with Power Platform using service principal
     - name: Authenticate with Power Platform
-      uses: microsoft/powerplatform-actions/authenticate-environment@v1
+      uses: microsoft/powerplatform-actions/authenticate-environment@v2
       with:
         app-id: ${{ secrets.POWERPLATFORM_APP_ID }}
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
@@ -30,7 +30,7 @@ jobs:
 
     # Pack Power Platform Solution
     - name: Power Platform Pack Solution
-      uses: microsoft/powerplatform-actions/pack-solution@v1
+      uses: microsoft/powerplatform-actions/pack-solution@v2
       with:
         SolutionSourceFolder: ${{ github.workspace }}/PowerPlatform/AliceforAccounts
         SolutionOutputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
@@ -38,7 +38,7 @@ jobs:
 
     # Import Power Platform Solution
     - name: Power Platform Import Solution
-      uses: microsoft/powerplatform-actions/import-solution@v1
+      uses: microsoft/powerplatform-actions/import-solution@v2
       with:
         SolutionInputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
         OverwriteUnmanagedCustomizations: true
