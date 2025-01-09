@@ -48,8 +48,9 @@ jobs:
       uses: azure/powershell@v1
       with:
         azPSVersion: 'latest'
-        inlineScript: |
-          ./CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/data_set_TEST.json"
+        scriptPath: ./CICD/replace_dataset.ps1
+        arguments: |
+           -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/data_set_TEST.json"
 
     # Deploy ARM Template
     - name: ARM Template Deployment
