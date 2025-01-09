@@ -1,0 +1,65 @@
+name: Power Platform CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+
+env:
+  SolutionName: YourSolutionName # Replace with your solution name or set dynamically
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Install Power Platform CLI tools
+    - name: Power Platform Tool Installer
+      uses: microsoft/powerplatform-actions/tool-installer@v1
+
+    # Authenticate with Power Platform using service principal
+    - name: Authenticate with Power Platform
+      uses: microsoft/powerplatform-actions/authenticate-environment@v1
+      with:
+        app-id: ${{ secrets.POWERPLATFORM_APP_ID }}
+        client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
+        environment-url: ${{ secrets.POWERPLATFORM_ENV_URL }}
+
+    # Pack Power Platform Solution
+    - name: Power Platform Pack Solution
+      uses: microsoft/powerplatform-actions/pack-solution@v1
+      with:
+        SolutionSourceFolder: ${{ github.workspace }}/_Eir Evo - Alice for Accounts/AliceforAccounts/AliceforAccounts
+        SolutionOutputFile: ${{ github.workspace }}/Repo - Alice/${{ env.SolutionName }}_Managed.zip
+        SolutionType: Managed
+
+    # Import Power Platform Solution
+    - name: Power Platform Import Solution
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        SolutionInputFile: ${{ github.workspace }}/Repo - Alice/${{ env.SolutionName }}_Managed.zip
+        OverwriteUnmanagedCustomizations: true
+        ConvertToManaged: true
+        PublishCustomizationChanges: true
+        PublishWorkflows: true
+
+    # Update Values in ARM Template using PowerShell
+    - name: Update Values in ARM Template
+      uses: azure/powershell@v1
+      with:
+        inlineScript: |
+          ./Repo/CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/repo/LogicApps" -input_dataset "${{ github.workspace }}/Repo/CICD/data_set_TEST.json"
+
+    # Deploy ARM Template
+    - name: ARM Template Deployment
+      uses: azure/arm-deploy@v1
+      with:
+        deploymentScope: resourceGroup
+        resourceGroupName: rg-ne-alice-test
+        location: North Europe
+        template: ${{ github.workspace }}/Repo/LogicApps/template.json
+        parameters: ${{ github.workspace }}/Repo/LogicApps/parameters.json
+        azureResourceManagerConnection: ${{ secrets.AZURE_RM_CONNECTION }}
