@@ -40,7 +40,7 @@ jobs:
     - name: Power Platform Import Solution
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
-        SolutionInputFile: ${{ github.workspace }}/Dataverse/${{ env.SolutionName }}_Managed.zip
+        SolutionInputFile: ${{ github.workspace }}/PowerPlatform/${{ env.SolutionName }}_Managed.zip
         OverwriteUnmanagedCustomizations: true
         ConvertToManaged: true
         PublishCustomizationChanges: true
