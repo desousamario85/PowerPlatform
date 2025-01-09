@@ -38,7 +38,7 @@ jobs:
         environment-url: ${{ secrets.POWERPLATFORM_ENV_URL }}
         app-id: ${{ secrets.POWERPLATFORM_APP_ID }}
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
-        tenant-id: ${{ secrets.TENANT_ID }}
+        tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
 
     # Update Values in ARM Template using PowerShell
     - name: Update Values in ARM Template
