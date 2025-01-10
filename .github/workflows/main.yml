@@ -52,15 +52,22 @@ jobs:
       uses: azure/powershell@v2
       with:
         azPSVersion: 'latest'
-        inlineScript: ${{ github.workspace }}/CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/CICD/data_set_TEST.json"        
+        inlineScript: ${{ github.workspace }}/CICD/replace_dataset.ps1 -source_path "${{ github.workspace }}/LogicApps" -input_dataset "${{ github.workspace }}/CICD/data_set_TEST.json"       
+        
+    # Login to Azure  
+    - name: Login to Azure  
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Deploy ARM Template
     - name: ARM Template Deployment
       uses: azure/arm-deploy@v1
       with:
-        deploymentScope: resourceGroup
+        scope: resourceGroup
         resourceGroupName: rg-ne-alice-test
-        location: North Europe
+        region: North Europe
         template: ${{ github.workspace }}/LogicApps/template.json
         parameters: ${{ github.workspace }}/LogicApps/parameters.json
-        azureResourceManagerConnection: ${{ secrets.AZURE_RM_CONNECTION }}
+
+
