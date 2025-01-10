@@ -43,6 +43,10 @@ jobs:
   Logic-App-Deploy:
    runs-on: ubuntu-latest
    steps:
+    # Checking out repo
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
     # Update Values in ARM Template using PowerShell
     - name: Update Values in ARM Template
       uses: azure/powershell@v2
