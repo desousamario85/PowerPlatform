@@ -64,7 +64,7 @@ jobs:
     - name: ARM Template Deployment
       uses: azure/arm-deploy@v1
       with:
-        scope: resourceGroup
+        scope: resourcegroup
         resourceGroupName: rg-ne-alice-test
         region: North Europe
         template: ${{ github.workspace }}/LogicApps/template.json
