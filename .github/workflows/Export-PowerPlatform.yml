@@ -1,0 +1,42 @@
+name: Export Power Platform Solution
+
+on:
+  workflow_dispatch:
+
+env:
+  SolutionName: ${{ vars.SolutionName }}
+  PP_Environment: ${{ vars.DevEnvironment }}
+
+jobs:
+  Power-Platform-Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
+    - name: Export Solution
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: '${{ env.PP_Environment }}'
+        app-id: ${{ secrets.POWERPLATFORM_APP_ID }}
+        client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
+        solution-name: ${{ env.SolutionName }}
+        solution-output-file: '${{ env.SolutionName }}.zip'
+        working-directory: 'out'
+
+    - name: Unpack Solution
+      uses: microsoft/powerplatform-actions/unpack-solution@v1
+      with:
+        solution-file: 'PowerPlatform/AliceforAccounts/${{ env.SolutionName }}'
+        solution-folder: '/PowerPlatform/AliceforAccounts'
+        solution-type: 'Managed'
+        overwrite-files: true
+
+    - name: Prepare solution changes for check-in into source control
+      uses: microsoft/powerplatform-actions/branch-solution@v1
+      with:
+        solution-folder: '/PowerPlatform/AliceforAccounts'
+        solution-target-folder: '/PowerPlatform/AliceforAccounts'
+        token: ${{ secrets.GITHUB_TOKEN }}
