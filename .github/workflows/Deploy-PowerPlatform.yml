@@ -1,4 +1,4 @@
-name: Power Platform CI/CD Pipeline
+name: Deploy Power Platform Solution
 
 on:
   workflow_dispatch:
