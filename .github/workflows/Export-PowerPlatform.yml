@@ -8,10 +8,15 @@ env:
   PP_Environment: ${{ vars.DevEnvironment }}
 
 jobs:
-  Power-Platform-Deploy:
+  Power-Platform-Export:
     runs-on: ubuntu-latest
 
     steps:
+
+      # Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
     - name: Install Power Platform Tools
       uses: microsoft/powerplatform-actions/actions-install@v1
 
