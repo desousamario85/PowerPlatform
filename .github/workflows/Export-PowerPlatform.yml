@@ -37,7 +37,7 @@ jobs:
         node-version: '16' 
     
     - name: Install Power Platform CLI
-      run: npm install -g @microsoft/powerplatform-cli
+      run: npm install -g pac-cli
       
     - name: Export Solution
       uses: microsoft/powerplatform-actions/export-solution@v1
