@@ -31,8 +31,13 @@ jobs:
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
         tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
 
-    - name: Verify PAC CLI installation
-      run: pac --version
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' 
+    
+    - name: Install Power Platform CLI
+      run: npm install -g @microsoft/powerplatform-cli
       
     - name: Export Solution
       uses: microsoft/powerplatform-actions/export-solution@v1
