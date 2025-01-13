@@ -31,6 +31,9 @@ jobs:
         client-secret: ${{ secrets.POWERPLATFORM_CLIENT_SECRET }}
         tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
 
+    - name: Verify PAC CLI installation
+      run: pac --version
+      
     - name: Export Solution
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
@@ -40,7 +43,7 @@ jobs:
         tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
         solution-name: ${{ env.SolutionName }}
         solution-output-file: '${{ env.SolutionName }}.zip'
-        working-directory: '/PowerPlatform/AliceforAccounts'
+        working-directory: 'PowerPlatform/AliceforAccounts'
         managed: true
         overwrite: true
 
