@@ -40,7 +40,7 @@ jobs:
         tenant-id: ${{ secrets.POWERPLATFORM_TENANT_ID }}
         solution-name: ${{ env.SolutionName }}
         solution-output-file: '${{ env.SolutionName }}.zip'
-        working-directory: 'out'
+        working-directory: '/PowerPlatform/AliceforAccounts'
         managed: true
         overwrite: true
 
