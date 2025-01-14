@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.24113.204" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.24113.00204">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.24114.228" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.24114.00228">
   <Entities />
   <Roles />
   <Workflows />
   <FieldSecurityProfiles />
   <Templates />
-  <RelationshipRoles />
   <EntityMaps />
   <EntityRelationships />
   <OrganizationSettings />

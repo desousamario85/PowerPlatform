@@ -331,7 +331,7 @@
               <Description description="" languagecode="1033" />
             </Descriptions>
             <options>
-              <option value="683430000" ExternalValue="">
+              <option value="683430000" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Email sorting" languagecode="1033" />
                 </labels>
@@ -339,7 +339,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </option>
-              <option value="683430001" ExternalValue="">
+              <option value="683430001" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Document validation" languagecode="1033" />
                 </labels>
@@ -347,7 +347,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </option>
-              <option value="683430002" ExternalValue="">
+              <option value="683430002" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Return email generating" languagecode="1033" />
                 </labels>
@@ -355,7 +355,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </option>
-              <option value="683430003" ExternalValue="">
+              <option value="683430003" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="BC validation" languagecode="1033" />
                 </labels>
