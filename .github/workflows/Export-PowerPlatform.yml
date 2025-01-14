@@ -56,7 +56,7 @@ jobs:
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
         solution-file: 'PowerPlatform/AliceforAccounts/${{ env.SolutionName }}'
-        solution-folder: '/PowerPlatform/AliceforAccounts'
+        solution-folder: 'PowerPlatform/AliceforAccounts'
         solution-type: 'Managed'
         overwrite-files: true
 
